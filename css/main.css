@@ -1620,9 +1620,9 @@ body {
     transform: translateX(-50%);
 
     width: 80%;
-    max-width: 500px;
+    max-width: 420px;
 
-    height: 320px; /* ALTURA FIJA */
+    height: 180px; /* ALTURA FIJA */
 
     z-index: 20;
 
