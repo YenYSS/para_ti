@@ -1707,10 +1707,14 @@ body {
 }
 
 /* MENSAJE */
+/* MENSAJE */
 .message-box{
     position: relative;
 
-    overflow: hidden;
+    overflow-y: auto; /* scroll vertical */
+    overflow-x: hidden;
+
+    max-height: 320px; /* altura máxima */
 
     padding: 28px 35px;
 
@@ -1744,6 +1748,68 @@ body {
 
     animation:
         floatMessage 4s ease-in-out infinite;
+
+        /* SCROLL BONITO */
+      .message-box::-webkit-scrollbar{
+          width: 8px;
+      }
+
+      .message-box::-webkit-scrollbar-track{
+          background: transparent;
+      }
+
+      .message-box::-webkit-scrollbar-thumb{
+          background: rgba(180,120,255,0.45);
+
+          border-radius: 20px;
+      }
+
+      .message-box::-webkit-scrollbar-thumb:hover{
+          background: rgba(180,120,255,0.7);
+      }
+}
+
+@media (max-width: 600px){
+
+    .letter{
+        width: 92%;
+        top: 5%;
+    }
+
+    .message-box{
+        max-height: 260px;
+
+        padding: 22px;
+    }
+
+    .message-box h1{
+        font-size: 1.6rem;
+    }
+
+    .message-box p{
+        font-size: .95rem;
+        line-height: 1.7;
+    }
+}
+
+.message-box::before{
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 25px;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0px,
+            transparent 24px,
+            rgba(180,120,255,0.05) 25px
+        );
+
+    pointer-events: none;
 }
 
 /* MOSTRAR MENSAJE */
@@ -1896,4 +1962,25 @@ body {
     100%{
         left: 140%;
     }
+}
+
+.letter-cover{
+    flex-direction: column;
+    gap: 8px;
+}
+
+.letter-cover span{
+    font-size: 1.4rem;
+    font-weight: bold;
+
+    text-shadow:
+        0 0 12px rgba(255,255,255,0.4);
+}
+
+.letter-cover small{
+    font-size: .95rem;
+
+    opacity: .9;
+
+    letter-spacing: 2px;
 }
