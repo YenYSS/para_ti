@@ -1610,6 +1610,7 @@ body {
 
 
 /* CONTENEDOR */
+/* CONTENEDOR */
 .letter{
     position: absolute;
 
@@ -1620,6 +1621,8 @@ body {
 
     width: 80%;
     max-width: 500px;
+
+    height: 320px; /* ALTURA FIJA */
 
     z-index: 20;
 
@@ -1714,8 +1717,7 @@ body {
     overflow-y: auto; /* scroll vertical */
     overflow-x: hidden;
 
-    max-height: 320px; /* altura máxima */
-
+    height: 100%;
     padding: 28px 35px;
 
     border-radius: 25px;
@@ -1749,6 +1751,8 @@ body {
     animation:
         floatMessage 4s ease-in-out infinite;
 
+}
+
         /* SCROLL BONITO */
       .message-box::-webkit-scrollbar{
           width: 8px;
@@ -1767,14 +1771,17 @@ body {
       .message-box::-webkit-scrollbar-thumb:hover{
           background: rgba(180,120,255,0.7);
       }
-}
 
 @media (max-width: 600px){
 
     .letter{
         width: 92%;
+
+        height: 260px;
+
         top: 5%;
     }
+
 
     .message-box{
         max-height: 260px;
